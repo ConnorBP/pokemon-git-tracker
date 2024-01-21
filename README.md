@@ -16,43 +16,42 @@ pokemon git tracker: read local git changes, and fire events that communicate wi
 ## Documentation
 
 The documentation is divided into several sections:
-- Installations
+- [Installation](#installation)
+   - [AWS CLI](#aws-cli)
 
-## Installations
+## Installation
 
 ### AWS CLI
 
-### Prerequisites
+#### Prerequisites
 - You should have an AWS account and have been provided with the necessary access keys (Access Key ID and Secret Access Key).
 
-### Step 1: Install the AWS CLI
+#### Step 1: Install the AWS CLI
 1. **Download the AWS CLI**: 
-   - For Windows: Download the installer from [AWS CLI official page](https://aws.amazon.com/cli/).
-   - For macOS/Linux: You can install using the bundled installer with `curl`. Run the following command in your terminal:
+   - For Windows/Linux/MacOS: Download the installer from [AWS CLI official page](https://aws.amazon.com/cli/).
+   - For macOS using homebrew: Run the following command in your terminal:
      ```
-     curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-     sudo installer -pkg AWSCLIV2.pkg -target /
+     brew install awscli
      ```
    - For other installation methods, visit the [AWS CLI installation guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
 
 2. **Verify the installation**: 
    - Open your terminal or command prompt and run `aws --version`. You should see the version number of the CLI.
 
-### Step 2: Configure the AWS CLI
+#### Step 2: Configure the AWS CLI
 1. **Run the configure command**:
    - In your terminal or command prompt, run `aws configure`. This command will prompt you to enter the AWS Access Key ID, Secret Access Key, AWS Region, and output format.
 
 2. **Enter your AWS credentials**:
    - **AWS Access Key ID**: Enter the Access Key ID provided to you.
    - **AWS Secret Access Key**: Enter the Secret Access Key.
-   - **Default region name**: Enter your preferred AWS region (e.g., `us-west-2`).
+   - **Default region name**: Enter your preferred AWS region (e.g., `us-east-2`).
    - **Default output format**: You can leave this blank or set it to `json`.
 
 3. **Verify the configuration**:
-   - Run `aws s3 ls` or any other AWS CLI command to verify that your configuration is correct. You should not receive any errors.
+   - Run `aws s3 ls` or `aws ec2 describe-instances`. You should not receive any errors.
 
-### Additional Tips
-- **Security**: Always keep your access keys secure. Do not share them or commit them to source control.
+#### Additional Tips
 - **Multiple Profiles**: If you need to use multiple AWS accounts, you can configure additional profiles using `aws configure --profile <profile_name>`.
 - **Help & Resources**: For more detailed instructions and troubleshooting, visit the [AWS CLI User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
 
