@@ -18,6 +18,7 @@ pokemon git tracker: read local git changes, and fire events that communicate wi
 The documentation is divided into several sections:
 - [Installation](#installation)
    - [AWS CLI](#aws-cli)
+   - [Terraform](#terraform)
 
 ## Installation
 
