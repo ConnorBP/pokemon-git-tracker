@@ -1,7 +1,7 @@
 # pokemon-git-tracker
 Tracks local github commits and notifes a shared group channel about the changes with a fun random pokemon attachment.
 
-## things we wawnna use for the OS class project:
+## things we wanna use for the OS class project:
 
  - Rust
  - Shell scripts
@@ -55,3 +55,19 @@ The documentation is divided into several sections:
 - **Multiple Profiles**: If you need to use multiple AWS accounts, you can configure additional profiles using `aws configure --profile <profile_name>`.
 - **Help & Resources**: For more detailed instructions and troubleshooting, visit the [AWS CLI User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
 
+### Terraform
+
+#### Step 1: Install Terraform
+1. **Download the Terraform**: 
+   - For Windows/Linux/MacOS: Download the installer from [Terraform installation official page]([https://aws.amazon.com/cli/](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli#install-terraform)).
+   - For macOS using homebrew: Run the following command in your terminal:
+     ```
+     brew tap hashicorp/tap
+     brew install hashicorp/tap/terraform
+     ```
+
+2. **Verify the installation**: 
+   - Open your terminal or command prompt and run `terraform -help`. You should see a list of the available Terraform commands.
+
+#### Additional Tips
+- **Help & Resources**: To get started with IaC (Infraestructure as Code), visit the Terraforms AWS deep dive [IaC with AWS](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/infrastructure-as-code) and [Terraform AWS Example Modules](https://github.com/terraform-aws-modules).
