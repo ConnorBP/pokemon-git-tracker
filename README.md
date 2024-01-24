@@ -79,7 +79,11 @@ The documentation is divided into several sections:
      ```
 
 2. **Verify the installation**:
+
    - Open your terminal or command prompt and run `terraform -help`. You should see a list of the available Terraform commands.
+
+3. **Initialize terraform on your system**
+   - In your terminal or command prompt run `cd terraform` from the project root. Then run `terraform init` to initialize terraform.
 
 #### Additional Tips
 
