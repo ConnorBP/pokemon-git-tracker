@@ -1,8 +1,15 @@
-variable "region" {
+variable "aws_region" {
   type        = string
   description = "AWS region for all resources"
 
   default = "us-east-2"
+}
+
+variable "linode_region" {
+  type        = string
+  description = "Linode region for all resources"
+
+  default = "us-east-1"
 }
 
 variable "project_name" {
@@ -10,11 +17,6 @@ variable "project_name" {
   description = "name of the project"
 
   default = "repodex"
-}
-
-# Linode Object Storage
-data "linode_object_storage_cluster" "primary" {
-  id = "us-east-1"
 }
 
 variable "linode_token" {
