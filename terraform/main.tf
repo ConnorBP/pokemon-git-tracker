@@ -1,5 +1,5 @@
 provider "aws" {
-  region = var.aws_region
+  region = var.region
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,8 +33,6 @@ provider "linode" {
 # Linode Object Storage
 #~~~~~~~~~~~~~~~~~~~~~~~~~~
 resource "linode_object_storage_bucket" "repodex-bucket" {
-  cluster      = var.linode_region
-  label        = "${var.project_name}-bucket"
-  acl          = "public-read-write"
-  cors_enabled = true
+  cluster = data.linode_object_storage_cluster.primary.id
+  label   = "${var.project_name}-bucket"
 }
