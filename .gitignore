@@ -15,4 +15,7 @@ Cargo.lock
 
 # terraform
 .terraform/
+terraform/
+
+.env
 
