@@ -81,6 +81,9 @@ The documentation is divided into several sections:
 2. **Verify the installation**:
    - Open your terminal or command prompt and run `terraform -help`. You should see a list of the available Terraform commands.
 
+3. **Initialize terraform on your system**
+   - In your terminal or command prompt run `cd terraform` from the project root. Then run `terraform init` to initialize terraform.
+
 #### Additional Tips
 
 - **Help & Resources**: To get started with IaC (Infraestructure as Code), visit the Terraforms AWS deep dive [IaC with AWS](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/infrastructure-as-code) and [Terraform AWS Example Modules](https://github.com/terraform-aws-modules).
