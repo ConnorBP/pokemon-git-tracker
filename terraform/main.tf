@@ -30,9 +30,11 @@ provider "linode" {
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Linode Object Storage
+# Linode Object Storage Bucket
 #~~~~~~~~~~~~~~~~~~~~~~~~~~
-resource "linode_object_storage_bucket" "repodex-bucket" {
-  cluster = data.linode_object_storage_cluster.primary.id
-  label   = "${var.project_name}-bucket"
+resource "linode_object_storage_bucket" "repodex_bucket" {
+  cluster      = var.linode_region
+  label        = "${var.project_name}-bucket"
+  acl          = "public-read-write"
+  cors_enabled = true
 }
