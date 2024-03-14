@@ -1,21 +1,35 @@
-use lambda_runtime::{service_fn, Error, LambdaEvent};
-use serde_json::{json, Value};
+mod action;
+mod health;
+
+use lambda_http::{http::StatusCode, run, service_fn, tracing, Body, Error, Request, Response};
+use serde_json::json;
+
+async fn router(event: Request) -> Result<Response<Body>, Error> {
+    let path = event.uri().path();
+    match path {
+        "/health" => health::health_controller(event).await,
+        "/action" => action::action_controller(event).await,
+        _ => handle_not_found().await,
+    }
+}
+
+pub async fn handle_not_found() -> Result<Response<Body>, Error> {
+    let payload = json!({
+        "message": "The requested resource was not found."
+    });
+
+    let res = Response::builder()
+        .status(StatusCode::NOT_FOUND)
+        .header("content-type", "application/json")
+        .body(payload.to_string().into())
+        .map_err(Box::new)?;
+
+    Ok(res)
+}
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
-    lambda_runtime::run(service_fn(run_lambda)).await
-}
+    tracing::init_default_subscriber();
 
-fn say_hello(name: Option<&str>) -> String {
-    let name = name.unwrap_or("stranger");
-    format!("Hello, {name}!")
-}
-
-async fn run_lambda(event: LambdaEvent<Value>) -> Result<Value, Error> {
-    let (event, _context) = event.into_parts();
-    tracing::info!("event: {:?}", event);
-
-    let name = event["name"].as_str();
-    let result = say_hello(name);
-    Ok(json!(result))
+    run(service_fn(router)).await
 }
