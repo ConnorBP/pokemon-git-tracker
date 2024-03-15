@@ -1,3 +1,0 @@
-# https://github.com/restyled-io/restyled.io/wiki/Common-Errors:-Rustfmt
-# forces rustfmt to use the correct edition
-edition = "2021"
