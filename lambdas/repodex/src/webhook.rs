@@ -1,7 +1,4 @@
-use lambda_http::{
-    http::{Method, StatusCode},
-    Body, Error, Request, Response,
-};
+use lambda_http::{http::Method, Body, Error, Request, Response};
 use serde::{Deserialize, Serialize};
 use serde_json::json;
 

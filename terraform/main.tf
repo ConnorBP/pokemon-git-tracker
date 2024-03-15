@@ -1,3 +1,13 @@
+terraform {
+  required_version = "~> 1.6"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.0.0"
+    }
+  }
+}
+
 provider "aws" {
   region = var.aws_region
 }
@@ -8,8 +18,8 @@ provider "aws" {
 module "lambda_function" {
   source = "terraform-aws-modules/lambda/aws"
 
-  function_name              = "${var.project_name}-lambda"
-  description                = "Lambda function for ${var.project_name}"
+  function_name              = "${var.service_name}-lambda"
+  description                = "Lambda function for ${var.service_name}"
   runtime                    = "provided.al2"
   architectures              = ["arm64"]
   handler                    = "bootstrap"
@@ -25,16 +35,5 @@ module "lambda_function" {
   local_existing_package = "../lambdas/repodex/target/lambda/repodex/bootstrap.zip"
 }
 
-provider "linode" {
-  token = var.linode_token
-}
-
-#~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Linode Object Storage Bucket
-#~~~~~~~~~~~~~~~~~~~~~~~~~~
-resource "linode_object_storage_bucket" "repodex_bucket" {
-  cluster      = var.linode_region
-  label        = "${var.project_name}-bucket"
-  acl          = "public-read-write"
-  cors_enabled = true
-}
+# this data source can be used to get the access to the effective Account ID, User ID, and ARN in which Terraform is authorized 
+data "aws_caller_identity" "current" {}
