@@ -2,9 +2,37 @@ use lambda_http::{
     http::{Method, StatusCode},
     Body, Error, Request, Response,
 };
-use serde_json::json;
+use rand::Rng;
+use serde::{Deserialize, Serialize};
 
-use crate::handle_not_found;
+use crate::{
+    handle_not_found,
+    webhook::{execute_webhook, ExecuteWebhookPayload, Webhook},
+};
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Commit {
+    pub hash: String,
+    pub url: String,
+    pub author: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Changes {
+    pub added: i32,
+    pub removed: i32,
+    pub modified: i32,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct CreateActionPayload {
+    pub repo: String,
+    pub branch: String,
+    pub date: String,
+    pub commit: Commit,
+    pub changes: Changes,
+    pub webhook: Webhook,
+}
 
 pub async fn action_controller(event: Request) -> Result<Response<Body>, Error> {
     let method = event.method();
@@ -16,28 +44,29 @@ pub async fn action_controller(event: Request) -> Result<Response<Body>, Error> 
 }
 
 async fn create_action(event: Request) -> Result<Response<Body>, Error> {
-    let pokemon_image = get_random_pokemon().await.unwrap();
+    let pokemon_id = rand::thread_rng().gen_range(1..=1025);
 
-    let body = event.body();
-    println!("Body: {:?}", body);
+    let body: CreateActionPayload =
+        serde_json::from_slice(event.body()).expect("Unable to parse body");
 
-    let payload = json!({
-        "pokemon_image": pokemon_image,
-        // "body": body,
-    });
+    execute_webhook(ExecuteWebhookPayload {
+        action: CreateActionPayload {
+            repo: body.repo,
+            branch: body.branch,
+            date: body.date,
+            commit: body.commit,
+            changes: body.changes,
+            webhook: body.webhook,
+        },
+        pokemon_id,
+    })
+    .await?;
 
     let res = Response::builder()
         .status(StatusCode::OK)
         .header("Content-Type", "application/json")
-        .body(payload.to_string().into())
+        .body("Action created successfully".into())
         .map_err(Box::new)?;
 
     Ok(res)
-}
-
-async fn get_random_pokemon() -> Result<String, Error> {
-    let rustemon_client = rustemon::client::RustemonClient::default();
-    let pokemon = rustemon::pokemon::pokemon::get_by_id(1, &rustemon_client).await;
-    let pokemon_image = pokemon.unwrap().sprites.front_default.unwrap();
-    Ok(pokemon_image)
 }

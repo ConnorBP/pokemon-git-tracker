@@ -1,5 +1,6 @@
 mod action;
 mod health;
+mod webhook;
 
 use lambda_http::{http::StatusCode, run, service_fn, tracing, Body, Error, Request, Response};
 use serde_json::json;
@@ -9,6 +10,7 @@ async fn router(event: Request) -> Result<Response<Body>, Error> {
     match path {
         "/health" => health::health_controller(event).await,
         "/action" => action::action_controller(event).await,
+        "/webhook" => webhook::webhook_controller(event).await,
         _ => handle_not_found().await,
     }
 }
