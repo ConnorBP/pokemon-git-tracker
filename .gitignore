@@ -18,6 +18,3 @@ Cargo.lock
 terraform/
 
 .env
-
-# Ignore all .sh files
-*.sh
