@@ -1,7 +1,4 @@
 #/bin/bash
-# by oToGamez
-# www.pro-toolz.net
-
       E='echo -e';e='echo -en';trap "R;exit" 2
     ESC=$( $e "\e")
    TPUT(){ $e "\e[${1};${2}H";}
@@ -17,7 +14,7 @@
            $E "   x                                          x"
            done
            WRITE;MARK;TPUT 1 5
-           $E "REPODEX SELECTION MENU                       ";UNMARK;}
+           $E "REPODEX SELECTION MENU                    ";UNMARK;}
            i=0; CLEAR; CIVIS;NULL=/dev/null
    FOOT(){ MARK;TPUT 13 5
            printf "ENTER - SELECT,NEXT                       ";UNMARK;}
@@ -28,7 +25,7 @@
      M1(){ TPUT  5 20; $e "UnInstall Watchdog";}
      M2(){ TPUT  6 20; $e "Run Watcher Locally";}
      M3(){ TPUT  7 20; $e "Lambda Install";}
-     M4(){ TPUT  8 20; $e "Placeholder";}
+     M4(){ TPUT  8 20; $e "Date";}
      M5(){ TPUT  9 20; $e "ABOUT  ";}
      M6(){ TPUT 10 20; $e "EXIT   ";}
       LM=6
@@ -52,6 +49,6 @@ REFRESH(){ after=$((i+1)); before=$((i-1))
         2) S=M2;SC;if [[ $cur == "" ]];then R;$e "\n$(df -h    )\n";ES;fi;;
         3) S=M3;SC;if [[ $cur == "" ]];then R;$e "\n$(route -n )\n";ES;fi;;
         4) S=M4;SC;if [[ $cur == "" ]];then R;$e "\n$(date     )\n";ES;fi;;
-        5) S=M5;SC;if [[ $cur == "" ]];then R;$e "\n$($e by oTo)\n";ES;fi;;
+        5) S=M5;SC;if [[ $cur == "" ]];then R;$e "\n$(xdg-open https://github.com/ConnorBP/pokemon-git-tracker/blob/main/DESIGN.md)\n";R;exit 0;clear;fi;;
         6) S=M6;SC;if [[ $cur == "" ]];then R;exit 0;fi;;
   esac;POS;done
