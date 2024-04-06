@@ -7,14 +7,14 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # Import colors
-source "${SCRIPT_DIR}/colors.sh"
+source "$SCRIPT_DIR/colors.sh"
 
 # Variables
 git_label='Git'
-git_script="${SCRIPT_DIR}/install/install-git.sh"
+git_script="$SCRIPT_DIR/install/install-git.sh"
 
 github_cli_label='Github CLI'
-github_cli_script="${SCRIPT_DIR}/install/install-github-cli.sh"
+github_cli_script="$SCRIPT_DIR/install/install-github-cli.sh"
 
 
 # Submenu for the Install option
@@ -31,13 +31,13 @@ handle_install_selection() {
         1)
             print_colored BLUE "==>"
             print_colored WHITE " Running $git_label installation Script...\n"
-            $git_script
+            "$git_script"
             echo
             ;;
         2)
             print_colored BLUE "==>"
             print_colored WHITE " Running $github_cli_label installation Script...\n"
-            $github_cli_script
+            "$github_cli_script"
             echo
             ;;
         3)

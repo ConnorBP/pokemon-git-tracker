@@ -14,7 +14,7 @@ print_colored() {
     local message="$2"
 
     if [[ -n ${!color} ]]; then
-        printf "${!color}%b${RESET}" "$message"
+        printf "${!color}%b$RESET" "$message"
     else
         echo "Invalid color: $color"
     fi
