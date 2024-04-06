@@ -57,5 +57,5 @@ while true; do
     show_install_menu
     read -p "Select software to install: " install_choice
     echo
-    handle_install_selection $install_choice
+    handle_install_selection "$install_choice"
 done

@@ -72,5 +72,5 @@ while true; do
     show_menu
     read -p "Enter your choice [1-4]: " choice
     echo
-    run_option $choice
+    run_option "$choice"
 done

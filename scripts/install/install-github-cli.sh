@@ -7,7 +7,7 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # Import colors
-source "$(dirname ${SCRIPT_DIR})/colors.sh"
+source "$(dirname "${SCRIPT_DIR}")/colors.sh"
 
 # Check if connected to the internet
 check_connection() {
