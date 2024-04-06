@@ -1,16 +1,20 @@
 #!/bin/bash
 
-source ./colors.sh
+# Get the directory of the script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+# Import colors
+source "${SCRIPT_DIR}/colors.sh"
 
 # Variables
 install_label='Install'
-install_script='install.sh'
+install_script="${SCRIPT_DIR}/install.sh"
 
 setup_label='Setup'
-setup_script='setup.sh'
+setup_script="${SCRIPT_DIR}/setup.sh"
 
 watchdog_label='Watchdog'
-watchdog_script='watchdog.sh'
+watchdog_script="${SCRIPT_DIR}/watchdog.sh"
 
 # Function to display the menu
 show_menu() {
@@ -30,7 +34,7 @@ run_option() {
             print_colored BLUE "==>"
             print_colored WHITE " Running $install_label Script...\n"
             # Add the command to run your first script here
-            "./$install_script"
+            $install_script
             echo
             ;;
         2)

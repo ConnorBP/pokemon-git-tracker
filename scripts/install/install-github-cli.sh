@@ -3,8 +3,11 @@
 # Purpose: Install Github CLI
 # Author: The bois
 
+# Get the directory of the script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 # Import colors
-source ./colors.sh
+source "$(dirname ${SCRIPT_DIR})/colors.sh"
 
 # Check if connected to the internet
 check_connection() {
@@ -22,66 +25,74 @@ check_connection() {
 }
 
 # Function to install Git via APT
-install_git_apt() {
+install_gh_apt() {
     print_colored GREEN "==>"
     print_colored WHITE " Detected Debian/Ubuntu.\n"
+
     #@info: Update the package repository 
     sudo apt-get update
-    #@info: Check if Git is installed
-    if command -v git &> /dev/null
+
+    #@info: Check if GitHub CLI is installed
+    if command -v gh &> /dev/null
     then
         print_colored GREEN "==>"
-        print_colored WHITE " Git is already installed. Proceed to the next step.\n"
+        print_colored WHITE " GitHub CLI is already installed. Proceed to the next step.\n"
         exit 0
     fi
-    print_colored GREEN "==>"
+    print_colored BLUE "==>"
     print_colored WHITE " Installing "
-    print_colored GREEN "git...\n"
-    sudo apt-get install git -y
+    print_colored GREEN "GitHub CLI...\n"
+    sudo apt-get install gh -y
 }
 
 # Function to install Git via YUM
-install_git_yum() {
+install_gh_yum() {
     print_colored GREEN "==>"
     print_colored WHITE " Detected CentOS/RHEL.\n"
+
     #@info: Update the package repository 
     sudo yum update
-    #@info: Check if Git is installed
-    if command -v git &> /dev/null
+
+    #@info: Check if GitHub CLI is installed
+    if command -v gh &> /dev/null
     then
         print_colored GREEN "==>"
-        print_colored WHITE " Git is already installed. Proceed to the next step.\n"
+        print_colored WHITE " GitHub CLI is already installed. Proceed to the next step.\n"
         exit 0
     fi
-    print_colored GREEN "==>"
+    print_colored BLUE "==>"
     print_colored WHITE " Installing "
-    print_colored GREEN "git...\n"
-    sudo yum install -y git
+    print_colored GREEN "GitHub CLI...\n"
+    sudo yum install -y gh
 }
 
 # Function to install Git via DNF
-install_git_dnf() {
+install_gh_dnf() {
     print_colored GREEN "==>"
     print_colored WHITE " Detected Fedora.\n"
+
     #@info: Update the package repository 
     sudo dnf update
-    #@info: Check if Git is installed
-    if command -v git &> /dev/null
+
+    #@info: Check if GitHub CLI is installed
+    if command -v gh &> /dev/null
     then
         print_colored GREEN "==>"
-        print_colored WHITE " Git is already installed. Proceed to the next step.\n"
+        print_colored WHITE " GitHub CLI is already installed. Proceed to the next step.\n"
         exit 0
     fi
-    print_colored GREEN "==>"
+    print_colored BLUE "==>"
     print_colored WHITE " Installing "
-    print_colored GREEN "git...\n"
-    sudo dnf install -y git
+    print_colored GREEN "GitHub CLI...\n"
+    sudo dnf install -y gh
 }
 
+
 # Function to install Git on macOS
-install_git_brew() {
+install_gh_brew() {
     print_colored GREEN "==>"
     print_colored WHITE " Detected MacOS.\n"
+
     #@info: Check if Homebrew is installed
     if ! command -v brew &> /dev/null
     then 
@@ -92,22 +103,22 @@ install_git_brew() {
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
 
-    #@info: Update the package repository 
+    #@info: Update Homebrew and installed formulas
     brew update
     brew upgrade
 
-    #@info: Check if Git is installed
-    if command -v git &> /dev/null
+    #@info: Check if GitHub CLI is installed
+    if command -v gh &> /dev/null
     then
         print_colored GREEN "==>"
-        print_colored WHITE " Git is already installed. Proceed to the next step.\n"
+        print_colored WHITE " GitHub CLI is already installed. Proceed to the next step.\n"
         exit 0
     fi
-    print_colored GREEN "==>"
+    
+    print_colored BLUE "==>"
     print_colored WHITE " Installing "
-    print_colored GREEN "git...\n"
-
-    brew install git
+    print_colored GREEN "GitHub CLI...\n"
+    brew install gh
 }
 
 # Main function
@@ -115,19 +126,19 @@ check_connection
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     if command -v apt &> /dev/null
     then
-        install_git_apt
+        install_gh_apt
     elif command -v yum &> /dev/null
     then
-        install_git_yum
+        install_gh_yum
     elif command -v dnf &> /dev/null
     then
-        install_git_dnf
+        install_gh_dnf
     else
         print_colored RED "==>"
         print_colored WHITE " Unsupported package manager. Please install Git manually.\n"
     fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    install_git_brew
+    install_gh_brew
 else
         print_colored RED "==>"
         print_colored WHITE " Unsupported operating system. Please install Git manually.\n"

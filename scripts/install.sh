@@ -1,13 +1,17 @@
 #!/bin/bash
 
-source ./colors.sh
+# Get the directory of the script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+# Import colors
+source "${SCRIPT_DIR}/colors.sh"
 
 # Variables
 git_label='Git'
-git_script='install-git.sh'
+git_script="${SCRIPT_DIR}/install/install-git.sh"
 
 github_cli_label='Github CLI'
-github_cli_script='install-github-cli.sh'
+github_cli_script="${SCRIPT_DIR}/install/install-github-cli.sh"
 
 
 # Submenu for the Install option
@@ -25,14 +29,14 @@ handle_install_selection() {
             print_colored BLUE "==>"
             print_colored WHITE " Running $git_label installation Script...\n"
             # Add the command to run your first script here
-            "./install/$git_script"
+            $git_script
             echo
             ;;
         2)
             print_colored BLUE "==>"
             print_colored WHITE " Running $github_cli_label installation Script...\n"
             # Add the command to run your second script here
-            "./install/$github_cli_script"
+            $github_cli_script
             echo
             ;;
         3)

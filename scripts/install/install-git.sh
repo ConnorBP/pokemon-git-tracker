@@ -3,8 +3,11 @@
 # Purpose: Install git
 # Author: The bois
 
+# Get the directory of the script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 # Import colors
-source ./colors.sh
+source "$(dirname ${SCRIPT_DIR})/colors.sh"
 
 # Check if connected to the internet
 check_connection() {
