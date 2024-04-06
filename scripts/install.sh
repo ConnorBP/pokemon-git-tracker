@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Purpose: Installation submenu
+# Author: The bois
+
 # Get the directory of the script
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
@@ -28,14 +31,12 @@ handle_install_selection() {
         1)
             print_colored BLUE "==>"
             print_colored WHITE " Running $git_label installation Script...\n"
-            # Add the command to run your first script here
             $git_script
             echo
             ;;
         2)
             print_colored BLUE "==>"
             print_colored WHITE " Running $github_cli_label installation Script...\n"
-            # Add the command to run your second script here
             $github_cli_script
             echo
             ;;

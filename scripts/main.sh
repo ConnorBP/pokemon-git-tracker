@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Purpose: Repodex Entry
+# Author: The bois
+
 # Get the directory of the script
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
