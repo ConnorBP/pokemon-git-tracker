@@ -23,7 +23,7 @@ CONFIG_FILE="\$REPO_ROOT/.discord_webhook_config"
 if [ -f "\$CONFIG_FILE" ]; then
     # Source the configuration file
     source "\$CONFIG_FILE"
-    
+
     # Now you can use variables defined in .discord_webhook_config
     echo "Webhook ID: \$webhook_id"
     echo "Webhook Token: \$webhook_token"
