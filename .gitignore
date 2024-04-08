@@ -21,3 +21,4 @@ terraform/
 
 .DS_Store
 
+.discord_webhook_config

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Purpose: Installation submenu
+# Purpose: Watchdog submenu
 # Author: The bois
 
 # Attempt to follow the symlink with readlink -f (Linux)
