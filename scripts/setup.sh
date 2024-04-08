@@ -13,7 +13,7 @@ source "$SCRIPT_DIR/colors.sh"
 git_label='Git & Github'
 git_script="$SCRIPT_DIR/setup/setup-git.sh"
 
-symlink_label='Symbiotic Link'
+symlink_label='Symbolic Link'
 symlink_script="$SCRIPT_DIR/setup/setup-symlink.sh"
 
 post_commit_label='Post-Commit'
