@@ -15,6 +15,7 @@ pub struct Commit {
     pub hash: String,
     pub url: String,
     pub author: String,
+    pub message: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
