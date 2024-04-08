@@ -19,13 +19,17 @@ symlink_script="$SCRIPT_DIR/setup/setup-symlink.sh"
 post_commit_label='Post-Commit'
 post_commit_script="$SCRIPT_DIR/setup/setup-post-commit.sh"
 
+discord_webhook_label='Discord Webhook'
+discord_webhook_script="$SCRIPT_DIR/setup/setup-discord-webhook.sh"
+
 # Submenu for the setup option
 show_menu() {
   echo "Welcome to the setup submenu!"
   echo "1) $git_label"
   echo "2) $symlink_label"
-  echo "3) $post_commit_label"
-  echo "4) Go back"
+  echo "3) $discord_webhook_label"
+  echo "4) $post_commit_label"
+  echo "5) Go back"
   echo "5) Exit"
   echo
 }
@@ -46,16 +50,22 @@ handle_selection() {
       ;;
     3)
       print_colored BLUE "==>"
+      print_colored WHITE " Running $discord_webhook_label setup script...\n"
+      $discord_webhook_script
+      echo
+      ;;
+    4)
+      print_colored BLUE "==>"
       print_colored WHITE " Running $post_commit_label setup script...\n"
       $post_commit_script
       echo
       ;;
-    4)
+    5)
       print_colored YELLOW "==>"
       print_colored WHITE " Returning to main menu..."
       exit 0
       ;;
-    5)
+    6)
       print_colored RED "==>"
       print_colored WHITE " Exiting...\n"
       exit 1
