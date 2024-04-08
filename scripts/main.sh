@@ -3,8 +3,8 @@
 # Purpose: Repodex Entry
 # Author: The bois
 
-# Get the directory of the script
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+# Attempt to follow the symlink with readlink -f (Linux)
+SCRIPT_DIR=$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}" 2>/dev/null || realpath "${BASH_SOURCE[0]}" 2>/dev/null || echo "${BASH_SOURCE[0]}")")" &>/dev/null && pwd)
 
 # Import colors
 source "$SCRIPT_DIR/colors.sh"
@@ -35,23 +35,23 @@ run_option() {
   case $1 in
     1)
       print_colored BLUE "==>"
-      print_colored WHITE " Running $install_label Script...\n"
+      print_colored WHITE " Running $install_label script...\n"
       # Add the command to run your first script here
-      "$install_script"
+      $install_script
       echo
       ;;
     2)
       print_colored BLUE "==>"
-      print_colored WHITE " Running $setup_label Script...\n"
+      print_colored WHITE " Running $setup_label script...\n"
       # Add the command to run your second script here
-      "./$setup_script"
+      $setup_script
       echo
       ;;
     3)
       print_colored BLUE "==>"
-      print_colored WHITE " Running $watchdog_label Script...\n"
+      print_colored WHITE " Running $watchdog_label script...\n"
       # Add the command to run your third script here
-      "./$watchdog_script"
+      $watchdog_script
       echo
       ;;
     4)
