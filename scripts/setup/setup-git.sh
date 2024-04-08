@@ -11,11 +11,11 @@ source "$(dirname "$SCRIPT_DIR")/colors.sh"
 
 # Function to check for required commands
 check_command() {
-    if ! command -v "$1" &> /dev/null; then
-        print_colored RED "==>"
-        print_colored WHITE " Required command not found: $1\n Please install it and try again.\n"
-        exit 1
-    fi
+  if ! command -v "$1" &>/dev/null; then
+    print_colored RED "==>"
+    print_colored WHITE " Required command not found: $1\n Please install it and try again.\n"
+    exit 1
+  fi
 }
 
 # Check for required commands
@@ -43,10 +43,10 @@ gh auth login
 
 # Check if GitHub CLI login was successful
 if gh auth status; then
-    print_colored GREEN "==>"
-    print_colored WHITE " GitHub CLI authentication successful. Continue to use the watchdog.\n"
+  print_colored GREEN "==>"
+  print_colored WHITE " GitHub CLI authentication successful. Continue to use the watchdog.\n"
 else
-    print_colored RED "==>"
-    print_colored WHITE " GitHub CLI authentication failed. Please try again or check your authentication method.\n"
-    exit 1
+  print_colored RED "==>"
+  print_colored WHITE " GitHub CLI authentication failed. Please try again or check your authentication method.\n"
+  exit 1
 fi
