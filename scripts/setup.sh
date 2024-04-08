@@ -39,25 +39,25 @@ handle_selection() {
     1)
       print_colored BLUE "==>"
       print_colored WHITE " Running $git_label setup script...\n"
-      $git_script
+      "$git_script"
       echo
       ;;
     2)
       print_colored BLUE "==>"
       print_colored WHITE " Running $symlink_label setup script...\n"
-      $symlink_script
+      "$symlink_script"
       echo
       ;;
     3)
       print_colored BLUE "==>"
       print_colored WHITE " Running $discord_webhook_label setup script...\n"
-      $discord_webhook_script
+      "$discord_webhook_script"
       echo
       ;;
     4)
       print_colored BLUE "==>"
       print_colored WHITE " Running $post_commit_label setup script...\n"
-      $post_commit_script
+      "$post_commit_script"
       echo
       ;;
     5)

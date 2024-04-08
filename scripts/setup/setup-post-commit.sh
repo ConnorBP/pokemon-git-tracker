@@ -10,7 +10,7 @@ SCRIPT_DIR=$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}" 2>/dev/null || rea
 source "$(dirname "$SCRIPT_DIR")/colors.sh"
 
 # Write or append to the post-commit hook
-cat <<EOF >> .git/hooks/post-commit
+cat <<EOF >>.git/hooks/post-commit
 #!/bin/bash
 
 # Find the root directory of the Git repository
@@ -23,7 +23,7 @@ CONFIG_FILE="\$REPO_ROOT/.discord_webhook_config"
 if [ -f "\$CONFIG_FILE" ]; then
     # Source the configuration file
     source "\$CONFIG_FILE"
-    
+
     # Now you can use variables defined in .discord_webhook_config
     echo "Webhook ID: \$webhook_id"
     echo "Webhook Token: \$webhook_token"
