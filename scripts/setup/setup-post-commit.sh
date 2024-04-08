@@ -19,6 +19,7 @@ commit_author=$(git log -1 --pretty=format:'%an')
 read added removed modified <<<$(git diff --numstat HEAD~1 HEAD | awk '{adds+=$1; dels+=$2; mods+=$3} END {print adds, dels, mods}')
 repo_url=$(git config --get remote.origin.url)
 repo_name=$(echo $repo_url | sed -e 's/.*\/\([^.]*\)\.git/\1/')
+commit_message=$(git log -1 --pretty=format:'%B')
 
 json_body=$(cat <<EOF
 {
@@ -28,7 +29,8 @@ json_body=$(cat <<EOF
     "commit": {
         "hash": "$commit_hash",
         "url": "https://github.com/ConnorBP/pokemon-git-tracker/commit/$commit_hash",
-        "author": "$commit_author"
+        "author": "$commit_author",
+        "message": "$commit_message"
     },
     "changes": {
         "added": $added,
