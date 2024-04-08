@@ -3,8 +3,8 @@
 # Purpose: Setup submenu
 # Author: The bois
 
-# Get the directory of the script
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+# Attempt to follow the symlink with readlink -f (Linux)
+SCRIPT_DIR=$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}" 2>/dev/null || realpath "${BASH_SOURCE[0]}" 2>/dev/null || echo "${BASH_SOURCE[0]}")")" &>/dev/null && pwd)
 
 # Import colors
 source "$SCRIPT_DIR/colors.sh"
@@ -13,11 +13,20 @@ source "$SCRIPT_DIR/colors.sh"
 git_label='Git & Github'
 git_script="$SCRIPT_DIR/setup/setup-git.sh"
 
+symlink_label='Symbiotic Link'
+symlink_script="$SCRIPT_DIR/setup/setup-symlink.sh"
+
+post_commit_label='Post-Commit'
+post_commit_script="$SCRIPT_DIR/setup/setup-post-commit.sh"
+
 # Submenu for the setup option
 show_menu() {
   echo "Welcome to the setup submenu!"
   echo "1) $git_label"
-  echo "2) Go back"
+  echo "2) $symlink_label"
+  echo "3) $post_commit_label"
+  echo "4) Go back"
+  echo "5) Exit"
   echo
 }
 # Function to handle user selection in the setup submenu
@@ -26,13 +35,30 @@ handle_selection() {
     1)
       print_colored BLUE "==>"
       print_colored WHITE " Running $git_label setup script...\n"
-      "$git_script"
+      $git_script
+      echo
+      ;;
+    2)
+      print_colored BLUE "==>"
+      print_colored WHITE " Running $symlink_label setup script...\n"
+      $symlink_script
       echo
       ;;
     3)
+      print_colored BLUE "==>"
+      print_colored WHITE " Running $post_commit_label setup script...\n"
+      $post_commit_script
+      echo
+      ;;
+    4)
       print_colored YELLOW "==>"
       print_colored WHITE " Returning to main menu..."
       exit 0
+      ;;
+    5)
+      print_colored RED "==>"
+      print_colored WHITE " Exiting...\n"
+      exit 1
       ;;
     *)
       print_colored RED "==>"

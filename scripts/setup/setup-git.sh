@@ -3,8 +3,8 @@
 # Purpose: Setting up Git and GitHub CLI
 # Author: The bois
 
-# Get the directory of the script
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+# Attempt to follow the symlink with readlink -f (Linux)
+SCRIPT_DIR=$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}" 2>/dev/null || realpath "${BASH_SOURCE[0]}" 2>/dev/null || echo "${BASH_SOURCE[0]}")")" &>/dev/null && pwd)
 
 # Import colors
 source "$(dirname "$SCRIPT_DIR")/colors.sh"
