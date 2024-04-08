@@ -27,27 +27,6 @@ if [[ ":$PATH:" != *":/usr/local/bin:"* ]]; then
   export PATH="$PATH":/usr/local/bin
 fi
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  if command -v apt &>/dev/null; then
-    install_git_apt
-  elif command -v yum &>/dev/null; then
-    install_git_yum
-  elif command -v dnf &>/dev/null; then
-    install_git_dnf
-  else
-    print_colored RED "==>"
-    print_colored WHITE " Unsupported package manager. Please install Git manually.\n"
-  fi
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  install_git_brew
-else
-  print_colored RED "==>"
-  print_colored WHITE " Unsupported operating system. Please install Git manually.\n"
-fi
-
-# Destination of the symlink
-# link_destination="$HOME/bin/repodex"
-
 # Target file for the symlink
 symlink_target="$PWD/scripts/main.sh"
 
