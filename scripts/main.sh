@@ -37,21 +37,21 @@ run_option() {
       print_colored BLUE "==>"
       print_colored WHITE " Running $install_label script...\n"
       # Add the command to run your first script here
-      $install_script
+      "$install_script"
       echo
       ;;
     2)
       print_colored BLUE "==>"
       print_colored WHITE " Running $setup_label script...\n"
       # Add the command to run your second script here
-      $setup_script
+      "$setup_script"
       echo
       ;;
     3)
       print_colored BLUE "==>"
       print_colored WHITE " Running $watchdog_label script...\n"
       # Add the command to run your third script here
-      $watchdog_script
+      "$watchdog_script"
       echo
       ;;
     4)

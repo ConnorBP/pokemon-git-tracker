@@ -13,11 +13,11 @@ source "$(dirname "$SCRIPT_DIR")/colors.sh"
 if [[ ":$PATH:" != *":/usr/local/bin:"* ]]; then
     print_colored YELLOW "==>"
     print_colored WHITE " Your /usr/local/bin directory isn't in the PATH. Adjusting...\n"
-    export PATH=$PATH:/usr/local/bin
+    export PATH="$PATH":/usr/local/bin
 fi
 
 # Create a symbolic link for main.sh
-sudo ln -s "$(pwd)/scripts/main.sh" ~/bin/repodex
+sudo ln -s "$PWD/scripts/main.sh" ~/bin/repodex
 
 # Check if Repodex symlink was successful
 if command -v "repodex" &> /dev/null; then
