@@ -36,7 +36,7 @@ pub async fn execute_webhook(webhook_payload: ExecuteWebhookPayload) -> Result<(
       "embeds": [
         {
           "title": "🌟 Project Update Detected! 🌟",
-          "description": format!("Repo: {}\nBranch: {}\nDate: {}", webhook_payload.action.repo, webhook_payload.action.branch, webhook_payload.action.date),
+          "description": format!("Repo: {}\nBranch: {}\nMessage: {}\nDate: {}", webhook_payload.action.repo, webhook_payload.action.branch, webhook_payload.action.commit.message, webhook_payload.action.date),
           "url": "https://github.com",
           "color": 0,
           "fields": [
