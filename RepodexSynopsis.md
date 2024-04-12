@@ -4,7 +4,7 @@ Repodox is a developer collaboration tool with a fun nerdy twist.
 
 ------
 
-![system overview graphic](https://github.com/ConnorBP/pokemon-git-tracker/raw/main/assets/graph.png)
+![system overview graphic](./assets/graph.png)
 
 Figure A. Repodex initial "napkin concept" flowchart
 
@@ -20,13 +20,13 @@ Figure A. Repodex initial "napkin concept" flowchart
 
 ​	We decided to make Repodex to assist with online developer collaboration, as well as to help motivate developers by showing work that is being done in a fun manner. One core focus of the project was also the technologies involved. Our group members wanted to try out something new, while also making something cool which we can actually use in our day to day lives.
 
-![img](https://cdn.discordapp.com/attachments/1197406237147541535/1228109259246534676/repodex_1.jpg?ex=662ad8e0&is=661863e0&hm=100eb52fad5ddf2fed4f5c0cba2adcaab361c91da7f8773be65e43319a4acfd8)
+![img](./assets/repodex_1.jpg)
 
 Figure B. Final Repodex Webservice System Context Diagram
 
-![Sequence Diagram](https://cdn.discordapp.com/attachments/1197406237147541535/1228106259165741147/image.png?ex=662ad615&is=66186115&hm=3d766060e381974829278e2258b504e5d78ab9dde1f428aa632412f3cc1c8885)
+![Sequence Diagram](./assets/sequence.png)
 
-Figure C. Final Repodex sequence diagram
+Figure C. Final Repodex sequence diagram of program operations
 
 ## Algorithm
 
@@ -37,47 +37,102 @@ Figure C. Final Repodex sequence diagram
 When brainstorming ideas to create this project, this is the process that we followed to end up with our Repodex product:
 
 ```mermaid
-flowchart TB
-    subgraph A [Brainstorming]
-        A1[Generate ideas for technologies to learn and use] --> A2[Identify problem areas we wish to solve]
-        A2 --> A3[Assess technologies we are proficient with already]
-    end
+%%{init: {'theme': 'forest'}}%%
+sequenceDiagram
+    participant Brainstorming as "Brainstorming"
+    participant Creation as "Creation"
+    participant Develop_Project as "Develop Project"
+    participant Extensions as "Extensions"
 
-    subgraph B [Creation]
-        A3 --> B1[Brainstorm project concept]
-        B1 --> B2[Determine if skill can be taught by one of us]
-        B2 --> B3[Verify divisibility among the group]
-        B3 --> B4[Check if project scope is manageable and extensible]
-        B4 --> B5[Finalize project concept]
-        B5 --> B6[Develop the Repodex product]
-    end
-
-    subgraph C [Resultant Product Description]
-        B6 --> C1[Describe expected outputs]
-        C1 --> C2[Create tool with a novel concept]
-        C2 --> C3[Learn new skills &#40;Programming languages or tools&#41;]
-        C3 --> C4[Build a useful code repository]
-        C4 --> C5[Enhance inspiration and collaboration]
-    end
-
-    subgraph D [Extensions]
-        C5 --> D1[Add Dynamic Motivational Messages feature]
-        C5 --> D2[Extend compatibility with more services]
-        C5 --> D3[Integrate various themes]
-        C5 --> D4[Implement sequence of Poke-evolutions for commits]
-        C5 --> D5[Expand user configuration options]
-        C5 --> D6[Launch webapp control panel]
-        C5 --> D7[Develop HTML product page]
-    end
-
-    style A fill:#b8daff,stroke:#333,stroke-width:2px
-    style B fill:#ffc107,stroke:#333,stroke-width:2px,stroke-dasharray: 5, 5
-    style C fill:#dc3545,stroke:#fff,stroke-width:2px
-    style D fill:#28a745,stroke:#fff,stroke-width:2px
+    Brainstorming->>Creation: Generated ideas and identified problems
+    Creation->>Brainstorming: Assessed technologies
+    Brainstorming->>Creation: Brainstormed project concept
+    Creation->>Creation: Determined if skill can be taught
+    Creation->>Creation: Verified divisibility among group
+    Creation->>Creation: Checked if project scope is manageable and extensible
+    Creation->>Develop_Project: Finalized project concept and developed Repodex product
+    Develop_Project->>Creation: Described expected outputs
+    Develop_Project->>Develop_Project: Created tool with a novel concept
+    Develop_Project->>Develop_Project: Learned new skills (Programming languages or tools)
+    Develop_Project->>Develop_Project: Built a useful code repository
+    Develop_Project->>Develop_Project: Enhanced inspiration and collaboration
+    Develop_Project->>Extensions: Ready for enhancements
+    Extensions->>Extensions: Added Dynamic Motivational Messages feature
+    Extensions->>Extensions: Extended compatibility with more services
+    Extensions->>Extensions: Integrated various themes
+    Extensions->>Extensions: Implemented sequence of Poke-evolutions for commits
+    Extensions->>Extensions: Expanded user configuration options
+    Extensions->>Extensions: Launched webapp control panel
+    Extensions->>Extensions: Developed HTML product page
 
 ```
 
 Figure D. Project Inception Process
+
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
+journey
+    title Project Development Journey
+    section Brainstorming
+      Generate ideas: 5: Connor, Carlos, Saaram, Peggy
+      Identify Challenges: 4: Carlos, Connor
+      Assess Proficiencies: 4: Connor, Carlos, Peggy, Saaram
+    section Creation
+      Brainstorm project concept: 5: Carlos, Connor, Peggy, Saaram
+      Determine if skill can be taught: 3: Connor, Carlos
+      Verify divisibility among group: 5: Carlos
+      Check project scope is manageable: 5: Connor
+      Finalize project concept: 5: Carlos
+      Develop the Repodex product: 5: Connor
+```
+
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
+journey
+    title Project Development Journey
+    section Develop Project
+      Describe expected outputs: 4: Saaram
+      Create tool with a novel concept: 5: Peggy
+      Learn new skills (Programming languages or tools): 5: Saaram
+      Build a useful code repository: 5: Peggy
+      Enhance inspiration and collaboration: 5: Saaram
+    section Extensions
+      Dynamic Messages: 3: Connor
+      Extend compatibility with more services: 3: Carlos
+      Integrate themes: 3: Connor
+      Poke-evolutions: 3: Carlos
+      Expand Config: 3: Connor
+      Web App: 3: Carlos
+      HTML Page: 3: Connor
+```
+
+
+
+Figure E. Project Development Process
 
 **Inputs**
 
