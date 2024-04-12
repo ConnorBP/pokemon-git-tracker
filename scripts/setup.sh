@@ -30,7 +30,7 @@ show_menu() {
   echo "3) $discord_webhook_label"
   echo "4) $post_commit_label"
   echo "5) Go back"
-  echo "5) Exit"
+  echo "6) Exit"
   echo
 }
 # Function to handle user selection in the setup submenu
