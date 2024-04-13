@@ -1,6 +1,6 @@
 # Repodex Project Creation Synopsis
 
-Repodox is a developer collaboration tool with a fun nerdy twist. Created by [Connor](https://github.com/ConnorBP), [Carlos](https://github.com/heyimcarlos), [Peggy](https://github.com/peggy8337), and [Saaram](https://github.com/SaaramRashidi)
+Repodox is a developer collaboration tool with a fun nerdy twist. Created by  [Carlos](https://github.com/heyimcarlos), [Connor](https://github.com/ConnorBP), [Peggy](https://github.com/peggy8337), and [Saaram](https://github.com/SaaramRashidi)
 
 ------
 
