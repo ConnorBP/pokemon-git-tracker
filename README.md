@@ -4,7 +4,7 @@ Tracks local Github commits and notifies a shared group channel about the change
 
 Repodex is intended to enhance developer collaboration, and FUN! 🐻‍❄️
 
-![commit message example](./assets/notification in channel group.png)
+![commit message example](./screenshots/notification-in-channel.png)
 
 ### Disclaimer
 
