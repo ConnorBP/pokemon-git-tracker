@@ -26,7 +26,7 @@ To see the initial concept document see [DESIGN.md](./DESIGN.md)
 
 ## Project Inception Idea
 
-Git tracker: read local git changes, and fire events that communicate with a lambda which notifies other group members of changes in discord. Have a DB that with a audit table to save events and more tables maybe. 
+Git tracker: read local git changes, and fire events that communicate with a lambda which notifies other group members of changes in discord. Have a DB that with a audit table to save events and more tables maybe.
 
 ## Installation and Setup
 
