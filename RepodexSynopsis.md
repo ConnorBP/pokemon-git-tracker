@@ -1,8 +1,8 @@
 # Repodex Project Creation Synopsis
 
-Repodox is a developer collaboration tool with a fun nerdy twist. Created by [Carlos](https://github.com/heyimcarlos), [Connor](https://github.com/ConnorBP), [Peggy](https://github.com/peggy8337), and [Saaram](https://github.com/SaaramRashidi)
+Repodox is a developer collaboration tool with a fun nerdy twist. Created by  [Carlos](https://github.com/heyimcarlos), [Connor](https://github.com/ConnorBP), [Peggy](https://github.com/peggy8337), and [Saaram](https://github.com/SaaramRashidi)
 
----
+------
 
 ![system overview graphic](./assets/graph.png)
 
@@ -12,19 +12,27 @@ Figure A. Repodex initial "napkin concept" flowchart
 
 [TOC]
 
+
+
+
+
+
+
+
+
 ## Scope
 
 > [!NOTE]
 >
-> _Why this project? What is the purpose?_
+> *Why this project? What is the purpose?*
 
 **Abstract**
 
-​ We decided to make Repodex to assist with online developer collaboration, as well as to help motivate developers by showing work that is being done in a fun manner. One core focus of the project was also the technologies involved. Our group members wanted to try out something new, while also making something cool which we can actually use in our day to day lives. Since we also wanted to collaborate via Git and Github, we figured "Why not make something that can help us with Github collaboration and also make it fun and nerdy!"; Hence, Repodex was born!
+​	We decided to make Repodex to assist with online developer collaboration, as well as to help motivate developers by showing work that is being done in a fun manner. One core focus of the project was also the technologies involved. Our group members wanted to try out something new, while also making something cool which we can actually use in our day to day lives. Since we also wanted to collaborate via Git and Github, we figured "Why not make something that can help us with Github collaboration and also make it fun and nerdy!"; Hence, Repodex was born!
 
 **Tech**
 
-​ For technologies, our group wanted to learn AWS Lambdas, rustlang (or rust), Terraform, Webhooks, and advanced bash option menus. We also wanted to collaborate using Github, so everyone involved learned how to use the git command line and Github to create commits and pull requests. See figure B (below) for an outline of our server design for the Repodex service.
+​	For technologies, our group wanted to learn AWS Lambdas, rustlang (or rust), Terraform, Webhooks, and advanced bash option menus. We also wanted to collaborate using Github, so everyone involved learned how to use the git command line and Github to create commits and pull requests. See figure B (below) for an outline of our server design for the Repodex service.
 
 ![img](./assets/repodex_1.jpg)
 
@@ -38,7 +46,7 @@ Figure C. Final Repodex sequence diagram of program operations
 
 > [!NOTE]
 >
-> _Steps followed for completing the project_
+> *Steps followed for completing the project*
 
 When brainstorming ideas to create this project, this is the process that we followed to end up with our Repodex product:
 
@@ -140,6 +148,8 @@ journey
       HTML Page: 0: Connor
 ```
 
+
+
 Figure E. Project Development Process
 
 **Inputs**
@@ -165,7 +175,7 @@ Figure E. Project Development Process
 
 - Something that inspires us to code, and assists with our collaboration
 
-  ![commit message example](C:\Developer\Projects\pokemon-git-tracker\assets\notification in channel group-1712969062905-1.png)
+  ![commit message example](./screenshots/notification-in-channel.png)
 
 ## Project Enhancements
 
@@ -205,4 +215,4 @@ All scripts are also on the repository on [Github](https://github.com/ConnorBP/p
 
 See output examples provided alongside this document. [(screenshots folder)](https://github.com/ConnorBP/pokemon-git-tracker/screenshots)
 
-![installer menu](./screenshots/setup-discord-webhook.sh (reads webhook creds, stores them in a file and adds that file to .gitignore).png)
+![installer menu](./screenshots/setup-discord-webhook.png)
