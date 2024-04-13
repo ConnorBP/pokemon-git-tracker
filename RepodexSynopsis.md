@@ -2,7 +2,7 @@
 
 Repodox is a developer collaboration tool with a fun nerdy twist. Created by  [Carlos](https://github.com/heyimcarlos), [Connor](https://github.com/ConnorBP), [Peggy](https://github.com/peggy8337), and [Saaram](https://github.com/SaaramRashidi)
 
-------
+---
 
 ![system overview graphic](./assets/graph.png)
 
@@ -24,15 +24,15 @@ Figure A. Repodex initial "napkin concept" flowchart
 
 > [!NOTE]
 >
-> *Why this project? What is the purpose?*
+> _Why this project? What is the purpose?_
 
 **Abstract**
 
-​	We decided to make Repodex to assist with online developer collaboration, as well as to help motivate developers by showing work that is being done in a fun manner. One core focus of the project was also the technologies involved. Our group members wanted to try out something new, while also making something cool which we can actually use in our day to day lives. Since we also wanted to collaborate via Git and Github, we figured "Why not make something that can help us with Github collaboration and also make it fun and nerdy!"; Hence, Repodex was born!
+​ We decided to make Repodex to assist with online developer collaboration, as well as to help motivate developers by showing work that is being done in a fun manner. One core focus of the project was also the technologies involved. Our group members wanted to try out something new, while also making something cool which we can actually use in our day to day lives. Since we also wanted to collaborate via Git and Github, we figured "Why not make something that can help us with Github collaboration and also make it fun and nerdy!"; Hence, Repodex was born!
 
 **Tech**
 
-​	For technologies, our group wanted to learn AWS Lambdas, rustlang (or rust), Terraform, Webhooks, and advanced bash option menus. We also wanted to collaborate using Github, so everyone involved learned how to use the git command line and Github to create commits and pull requests. See figure B (below) for an outline of our server design for the Repodex service.
+​ For technologies, our group wanted to learn AWS Lambdas, rustlang (or rust), Terraform, Webhooks, and advanced bash option menus. We also wanted to collaborate using Github, so everyone involved learned how to use the git command line and Github to create commits and pull requests. See figure B (below) for an outline of our server design for the Repodex service.
 
 ![img](./assets/repodex_1.jpg)
 
@@ -46,7 +46,7 @@ Figure C. Final Repodex sequence diagram of program operations
 
 > [!NOTE]
 >
-> *Steps followed for completing the project*
+> _Steps followed for completing the project_
 
 When brainstorming ideas to create this project, this is the process that we followed to end up with our Repodex product:
 
@@ -147,8 +147,6 @@ journey
       Web App: 0: Carlos
       HTML Page: 0: Connor
 ```
-
-
 
 Figure E. Project Development Process
 
