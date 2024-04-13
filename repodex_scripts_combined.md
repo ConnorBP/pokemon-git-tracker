@@ -27,7 +27,6 @@ cargo lambda build -r --arm64 -o zip;
 
 ```
 
-
 ## colors.sh
 
 ```sh
@@ -55,7 +54,6 @@ print_colored() {
 }
 
 ```
-
 
 ## install.sh
 
@@ -124,7 +122,6 @@ done
 
 ```
 
-
 ## invoke.sh
 
 ```sh
@@ -153,7 +150,6 @@ echo "Invoking lambda function..."
 cargo lambda invoke "$FUNCTION_NAME" --data-ascii "$FUNCTION_PAYLOAD"
 
 ```
-
 
 ## main.sh
 
@@ -238,7 +234,6 @@ done
 
 ```
 
-
 ## menu.sh
 
 ```sh
@@ -299,7 +294,6 @@ REFRESH(){ after=$((i+1)); before=$((i-1))
   esac;POS;done
 
 ```
-
 
 ## setup.sh
 
@@ -394,7 +388,6 @@ done
 
 ```
 
-
 ## watch.sh
 
 ```sh
@@ -420,7 +413,6 @@ echo "Watching lambda function..."
 cargo lambda watch;
 
 ```
-
 
 ## watchdog.sh
 
@@ -488,7 +480,6 @@ while true; do
 done
 
 ```
-
 
 ## install-git.sh
 
@@ -624,7 +615,6 @@ else
 fi
 
 ```
-
 
 ## install-github-cli.sh
 
@@ -768,7 +758,6 @@ fi
 
 ```
 
-
 ## setup-discord-webhook.sh
 
 ```sh
@@ -818,7 +807,6 @@ else
 fi
 
 ```
-
 
 ## setup-git.sh
 
@@ -878,7 +866,6 @@ else
 fi
 
 ```
-
 
 ## setup-post-commit.sh
 
@@ -957,7 +944,6 @@ chmod +x .git/hooks/post-commit
 echo "Post-commit hook setup complete. It will now run after every commit."
 
 ```
-
 
 ## setup-symlink.sh
 
