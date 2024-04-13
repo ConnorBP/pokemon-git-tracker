@@ -18,7 +18,13 @@ Figure A. Repodex initial "napkin concept" flowchart
 >
 > *Why this project? What is the purpose?*
 
-​	We decided to make Repodex to assist with online developer collaboration, as well as to help motivate developers by showing work that is being done in a fun manner. One core focus of the project was also the technologies involved. Our group members wanted to try out something new, while also making something cool which we can actually use in our day to day lives.
+**Abstract**
+
+​	We decided to make Repodex to assist with online developer collaboration, as well as to help motivate developers by showing work that is being done in a fun manner. One core focus of the project was also the technologies involved. Our group members wanted to try out something new, while also making something cool which we can actually use in our day to day lives. Since we also wanted to collaborate via Git and Github, we figured "Why not make something that can help us with Github collaboration and also make it fun and nerdy!"; Hence, Repodex was born!
+
+**Tech**
+
+​	For technologies, our group wanted to learn AWS Lambdas, rustlang (or rust), Terraform, Webhooks, and advanced bash option menus. We also wanted to collaborate using Github, so everyone involved learned how to use the git command line and Github to create commits and pull requests. See figure B (below) for an outline of our server design for the Repodex service.
 
 ![img](./assets/repodex_1.jpg)
 
@@ -86,16 +92,16 @@ Figure D. Project Inception Process
 journey
     title Project Development Journey
     section Brainstorming
-      Generate ideas: 5: Connor, Carlos, Saaram, Peggy
-      Identify Challenges: 4: Carlos, Connor
+      Generate ideas: 6: Connor, Carlos, Saaram, Peggy
+      Identify Challenges: 5: Carlos, Connor
       Assess Proficiencies: 4: Connor, Carlos, Peggy, Saaram
     section Creation
-      Brainstorm project concept: 5: Carlos, Connor, Peggy, Saaram
-      Determine if skill can be taught: 3: Connor, Carlos
-      Verify divisibility among group: 5: Carlos
-      Check project scope is manageable: 5: Connor
-      Finalize project concept: 5: Carlos
-      Develop the Repodex product: 5: Connor
+      Brainstorm concept: 6: Carlos, Connor, Peggy, Saaram
+      Determine skill level: 5: Connor, Carlos
+      Divide Work: 7: Carlos, Connor, Peggy, Saaram
+      Check Proj. scope: 5: Connor
+      Finalize Concept: 7: Carlos, Connor
+      Develop Repodex: 5: Connor
 ```
 
 ```mermaid
@@ -115,19 +121,23 @@ journey
 journey
     title Project Development Journey
     section Develop Project
-      Describe expected outputs: 4: Saaram
-      Create tool with a novel concept: 5: Peggy
-      Learn new skills (Programming languages or tools): 5: Saaram
-      Build a useful code repository: 5: Peggy
-      Enhance inspiration and collaboration: 5: Saaram
+      Determine Expectations: 7: Saaram
+      Learn new skills (Programming languages or tools): 7: Saaram, Peggy, Carlos
+      Teach Git: 7: Carlos
+      Teach rustlang: 7: Connor
+      Setup code repository: 7: Connor, Carlos
+      Develop Server: 7: Carlos, Connor
+      Develop frontend: 6: Peggy, Saaram
+      Inspire, Collaborate: 5: Saaram, Carlos
     section Extensions
-      Dynamic Messages: 3: Connor
-      Extend compatibility with more services: 3: Carlos
-      Integrate themes: 3: Connor
-      Poke-evolutions: 3: Carlos
-      Expand Config: 3: Connor
-      Web App: 3: Carlos
-      HTML Page: 3: Connor
+      Make Presentation: 7: Saaram
+      Dynamic Messages: 0: Connor
+      Extend compatibility with more services: 5: Carlos
+      Integrate themes: 0: Connor
+      Poke-evolutions: 0: Connor
+      Expand Config: 3: Carlos
+      Web App: 0: Carlos
+      HTML Page: 0: Connor
 ```
 
 
@@ -146,7 +156,6 @@ Figure E. Project Development Process
   - Has a technology we all want to learn, and at least one of us can teach the others
   - Can be divided into parts among the group members
   - Has a project scope which is both manageable, and extensible
-- 
 
 **Expected Output**
 

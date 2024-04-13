@@ -1,6 +1,10 @@
-# High level design overview document
+# First draft: High level design overview document
 
     This is a broad overview of components we expect to see in the RepoDex system.
+
+> [!IMPORTANT]
+>
+> The content of this document is from the initial design concept, and may not be entirely accurate to the current state of RepoDex.
 
 ![system overview graphic](./assets/graph.png)
 
