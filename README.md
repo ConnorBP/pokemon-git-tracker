@@ -1,6 +1,20 @@
-# pokemon-git-tracker
+# RepoDex
 
-Tracks local github commits and notifes a shared group channel about the changes with a fun random pokemon attachment.
+Tracks local Github commits and notifies a shared group channel about the changes with a fun random creature character attachment and motivational message.
+
+Repodex is intended to enhance developer collaboration, and FUN! 🐻‍❄️
+
+![commit message example](C:\Developer\Projects\pokemon-git-tracker\assets\notification in channel group.png)
+
+### Disclaimer
+
+RepoDex is designed as a fun, educational tool for enhancing developer collaboration. The use of RepoDex and its content is at the user's discretion. The creators of RepoDex make no warranties regarding its functionality or appropriateness for a particular purpose, and they shall not be liable for any direct or indirect damages arising from its use. The users are solely responsible for any outcomes resulting from their use of RepoDex.
+
+## Design Process
+
+To read about the design process, see the [RepodexSynopsis Document](./RepodexSynopsis.md)
+
+To see the initial concept document see [DESIGN.md](./DESIGN.md)
 
 ## things we wanna use for the OS class project:
 
@@ -10,19 +24,18 @@ Tracks local github commits and notifes a shared group channel about the changes
 - DB
 - Terraform (setup db/lambda infra) (maybe)
 
-## possible ideas:
+## Project Inception Idea
 
-pokemon git tracker: read local git changes, and fire events that communicate with a lambda which notifies other group members of changes in discord. Have a DB that with a audit table to save events and more tables maybe. Add some GPT to analyze the structure the event text as a discord bot.
+Git tracker: read local git changes, and fire events that communicate with a lambda which notifies other group members of changes in discord. Have a DB that with a audit table to save events and more tables maybe.
 
-## Documentation
+## Installation and Setup
 
-The documentation is divided into several sections:
+Detailed instructions for setting up RepoDex can be found in our installation guide. This includes steps for configuring AWS CLI, using Terraform for infrastructure management, and more.
 
-- [Installation](#installation)
-  - [AWS CLI](#aws-cli)
-  - [Terraform](#terraform)
+### Quick Links
 
-## Installation
+- [AWS CLI Setup](#aws-cli)
+- [Terraform Initialization](#terraform)
 
 ### AWS CLI
 
