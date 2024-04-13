@@ -160,9 +160,14 @@ Figure E. Project Development Process
 **Expected Output**
 
 - A tool with a novel concept that is useful to us
+
 - New learned skills (Programming languages or tools: rustlang, git, aws, etc)
+
 - A useful code repository for the tool that we can proudly show on our resume / portfolio.
+
 - Something that inspires us to code, and assists with our collaboration
+
+  ![commit message example](C:\Developer\Projects\pokemon-git-tracker\assets\notification in channel group-1712969062905-1.png)
 
 ## Project Enhancements
 
@@ -200,4 +205,6 @@ All scripts are also on the repository on [Github](https://github.com/ConnorBP/p
 
 # Outputs Received
 
-See output examples provided alongside this document.
+See output examples provided alongside this document. [(screenshots folder)](https://github.com/ConnorBP/pokemon-git-tracker/screenshots)
+
+![installer menu](./screenshots/setup-discord-webhook.sh (reads webhook creds, stores them in a file and adds that file to .gitignore).png)

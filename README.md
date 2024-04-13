@@ -4,6 +4,8 @@ Tracks local Github commits and notifies a shared group channel about the change
 
 Repodex is intended to enhance developer collaboration, and FUN! 🐻‍❄️
 
+![commit message example](C:\Developer\Projects\pokemon-git-tracker\assets\notification in channel group.png)
+
 ### Disclaimer
 
 RepoDex is designed as a fun, educational tool for enhancing developer collaboration. The use of RepoDex and its content is at the user's discretion. The creators of RepoDex make no warranties regarding its functionality or appropriateness for a particular purpose, and they shall not be liable for any direct or indirect damages arising from its use. The users are solely responsible for any outcomes resulting from their use of RepoDex.
